@@ -1,27 +1,34 @@
 <!doctype HTML>
-<head lang="en" ng-app="darwinex_test">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-	<link rel="styleSheet" type="text/css" href="styles/css/main.css" />
-</head>
-<body>
-	<div class="mainContent">	
+<html ng-app="darwinex_test">
+	<head >
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+		<link rel="styleSheet" type="text/css" href="styles/css/main.css" />
+		<link rel="styleSheet" type="text/css" href="styles/css/fonts.css" />
+	</head>
+	<body>
 		<nav class="navBar">
 			<div class="content">
-				<img src="res/images/logo-darwinex.svg" />
+				<img src="res/images/logo-darwinex.svg" id="logo"/>
 			</div>
 		</nav>
-
-		<section>
-			<span class="btn-success">asd</span>
-			<br /><br />
-			<span class="btn-block">asd</span>
-			<br /><br />
-			<span class="btn-sm">asd</span>
-			<br /><br />
-			<span class="btn-icon"></span>
+		<aside class="mainMenu" ng-controller="MenuController">
+			<span class="sectionName">Principal</span>
+			<ul>
+				<li ng-repeat="item in items">
+					<i class="{{ item.icon }}"></i>
+					<span>{{ item.label }}</span>
+				</li>
+			</ul>
+		</aside>
+		<section class="mainContent" ng-view>
 		</section>
 
-		<footer>
-		</footer>
-	</div>
-</body>
+		<script src="/bower_components/angular/angular.min.js"></script>
+		<script src="/bower_components/angular-route/angular-route.min.js"></script>
+
+		<script src="scripts/app.js"></script>
+
+		<script src="scripts/controllers/home.js"></script>
+		<script src="scripts/controllers/menu.js"></script>
+	</body>
+</html>

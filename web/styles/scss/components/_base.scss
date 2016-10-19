@@ -5,6 +5,8 @@ html, body {
 
 body {
 	font-family: 'Open Sans', sans-serif;
+	margin: 0;
+	padding: 0;
 	background: $colorBlack;
 }
 
@@ -57,21 +59,92 @@ body {
 	}
 
 	&.btn-icon {
-		width: 16px;
-		height: 16px;
+		width: 20px;
+		height: 20px;
 		text-align: center;
 		background: $colorWhite;
-		border-radius: 8px;
+		border-radius: 10px;
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: cover;
-		
+		font-size: 12px;
+		line-height: 23px;
+		color: $colorBlack;
+
 		&:hover {
 			background: $colorBlue;
-		}
-
-		&.icon-card {
-			background: url(/web/res/images/card-icon.svg);
+			color: $colorGreyDark;
 		}
 	}
+}
+
+nav.navBar {
+	background: $colorBlack;
+
+	padding: 10px;
+
+	#logo {
+		width: 115px;
+		height: 25px;
+	}
+}
+
+aside.mainMenu {
+	width: 188px;
+	height: calc(100% - 50px);
+	float: left;
+	transition: all 0.15s ease-out;
+	background: rgba(255, 255, 255, 0.1);
+
+	color: rgba(255, 255, 255, 0.9); 
+
+	.sectionName {
+		height: 35px;
+		background: rgba(255, 255, 255, 0.05);
+		text-transform: uppercase;
+		display: block;
+		line-height: 35px;
+		padding-left: 20px;
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			height: 30px;
+			width: 100%;
+			display: table;
+			cursor: pointer;
+			padding-left: 20px;
+			box-sizing: border-box;
+
+			> * {
+				display: table-cell;
+				vertical-align: middle;
+			}
+
+			&:hover {
+				background: rgba(255, 255, 255, 0.025);
+			}
+
+			span {
+				width: 80%;
+				text-align: left;
+				font-size: 12px;
+			}
+		}
+	}
+}
+
+section.mainContent {
+	width: calc(100% - 188px);
+	height: calc(100% - 50px);
+	float: left;
+	transition: all 0.15s ease-out;
+	background: rgba(255, 255, 255, 0.05);
+	padding: 8px;
+	color: $colorWhite;
+	box-sizing: border-box;
 }

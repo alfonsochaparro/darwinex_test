@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: "icon_fonts";
-  src:url("../../res/fonts/icon_fonts.eot");
-  src:url("../../res/fonts/icon_fonts.eot?#iefix") format("embedded-opentype"),
-    url("../../res/fonts/icon_fonts.woff") format("woff"),
-    url("../../res/fonts/icon_fonts.ttf") format("truetype"),
-    url("../../res/fonts/icon_fonts.svg#icon_fonts") format("svg");
+  src:url("../fonts/icon_fonts.eot");
+  src:url("../fonts/icon_fonts.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/icon_fonts.woff") format("woff"),
+    url("../fonts/icon_fonts.ttf") format("truetype"),
+    url("../fonts/icon_fonts.svg#icon_fonts") format("svg");
   font-weight: normal;
   font-style: normal;
 

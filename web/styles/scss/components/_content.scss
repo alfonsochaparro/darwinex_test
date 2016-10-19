@@ -60,6 +60,49 @@ section.mainContent {
 					border-radius: 2px;
 					cursor: pointer;
 					padding: 0;
+					font-weight: normal;
+
+					li {
+						display: table;
+						height: 30px;
+						width: 100%;
+						color: $colorGreyDark;
+						line-height: 30px;
+						padding: 0 4px;
+						box-sizing: border-box;
+
+						&:last-child {
+							background: rgba(0, 0, 0, 0.1);
+							border-top: 1px rgba(0, 0, 0, 0.2) solid;
+						}
+
+						> * {
+							display: table-cell;
+							vertical-align: middle;
+							font-weight: normal;
+						}
+
+						.icon {
+							width: 16px;
+							height: 16px;
+							margin-right: 8px;
+							border-radius: 8px;
+							display: inline-block;
+
+							&.red { background: $colorRed; }
+							&.pink { background: $colorPink; }
+							&.orange { background: $colorOrange; }
+							&.green { background: $colorGreen; }
+						}
+
+						.value {
+							text-align: right;
+
+							i {
+								color: $colorGreyLight;
+							}
+						}
+					}
 				}
 			}
 		}
@@ -71,6 +114,8 @@ section.mainContent {
 		max-height: 48px;
 		overflow: hidden;
 		position: relative;
+		margin-top: 20px;
+		font-size: 10pt;
 
 		&:after {
 			content: "";
@@ -99,6 +144,7 @@ section.mainContent {
 		text-align: center;
 		padding: 0 12px;
 		line-height: 50px;
+		font-size: 10pt;
 
 		&.optionBtn {
 			cursor: pointer;
@@ -114,6 +160,26 @@ section.mainContent {
 		
 		&.right {
 			float: right;
+		}
+
+		&.dropdown {
+			cursor: pointer;
+
+			.separator {
+				margin-right: 8px;
+			}
+
+			i {
+				color: $colorGreyDark;
+				margin-left: 8px;
+			}
+
+			li {
+				color: $colorGreyDark;
+				height: 30px;
+				line-height: 30px;
+				padding: 0 8px;
+			}
 		}
 	}
 

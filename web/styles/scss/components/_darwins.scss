@@ -111,5 +111,9 @@
 .darwinsCarousel {
 	max-width: 100%;
 	overflow: hidden;	
-    height: calc(100% - 255px);
+    height: calc(100% - 275px);
+
+    .darwinsContainer {
+    	transition: all 0.2s ease-out;
+    }
 }

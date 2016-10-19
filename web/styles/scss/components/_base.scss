@@ -83,6 +83,12 @@ hr {
 			background: $colorBlue;
 			color: $colorGreyDark;
 		}
+
+		&.dark {
+			background: transparent;
+			box-shadow: 0px 0px 1px rgba(255, 255, 255, 0.25);
+			color: rgba(255, 255, 255, 0.4);
+		}
 	}
 }
 

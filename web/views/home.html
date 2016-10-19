@@ -6,7 +6,22 @@
 			<span class="strategyName">Estrategianombre</span>
 			<span class="strategyUser">
 				Nombre de usuario
-				<span class="badge">+2</span>
+				<span class="badge" uib-dropdown>
+					<span uib-dropdown-toggle>+2</span>
+					<ul uib-dropdown-menu>
+						<li ng-repeat="data in userData">
+							<span class="name">
+								<span class="icon {{ data.color }}"></span>
+								<span>{{ data.name }}</span>
+							</span>
+							<span class="value">
+								<i class="icon-owl"></i>
+								<span>98,9</span>
+							</span>
+						</li>
+						<li>+5. Go to user profile</li>
+					</ul>
+				</span>
 			</span>
 		</div>
 	</div>
@@ -31,16 +46,35 @@
 			ng-click="inPortfolio = !inPortfolio"></div>
 	</div>	
 	<span class="separator"></span>
-	<span class="option right">
+	<span class="option right dropdown" uib-dropdown>
 		<span class="separator"></span>
-		<span>Order by Return</span>
+		<span uib-dropdown-toggle>
+			Order by Return
+			<i class="glyphicon glyphicon-chevron-down"></i>
+		</span>
+		<ul uib-dropdown-menu>
+			<li>Inversión</li>
+			<li>Retorno</li>
+			<li>Dawnscore</li>
+			<li>D-Score</li>
+		</ul>
 	</span>
 </div>
 <br />
+<div class="carouselActions pull-right">
+	<span class="btn-icon dark" ng-click="moveCarousel('left')">
+		<span class="glyphicon glyphicon-chevron-left"></span>
+	</span>
+	<span class="btn-icon dark" ng-click="moveCarousel('right')">
+		<span class="glyphicon glyphicon-chevron-right"></span>
+	</span>
+</div>
 <span>{{ darwins.length }} darwins encontrados</span>
+
 <br /><br />
 <section class="darwinsCarousel" ng-scrollbars ng-scrollbars-config="scrollBarConfig">
-	<div class="darwinsContainer" style="width: {{ darwins.length * 265 }}px; ">
+	<div class="darwinsContainer" 
+		style="width: {{ darwins.length * 265 }}px; margin-left: -{{ carouselIndex * 265 }}px;">
 		<darwin ng-repeat="darwin in darwins" data-value="darwin"></darwin>
 	</div>
 </section>

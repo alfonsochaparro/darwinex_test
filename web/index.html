@@ -2,16 +2,23 @@
 <html ng-app="darwinex_test">
 	<head >
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    	<link rel="stylesheet" href="/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" type="text/css"/>
 		<link rel="styleSheet" type="text/css" href="styles/css/main.css" />
 		<link rel="styleSheet" type="text/css" href="styles/css/fonts.css" />
 	</head>
 	<body>
 		<nav class="navBar">
 			<div class="content">
+				<span class="menuBtn" ng-click="showMenu = showMenu ? false : true;"
+					ng-class="{ menuOpen: showMenu }" >
+					<span class="bar"></span>
+					<span class="bar"></span>
+					<span class="bar"></span>
+				</span>
 				<img src="res/images/logo-darwinex.svg" id="logo"/>
 			</div>
 		</nav>
-		<aside class="mainMenu" ng-controller="MenuController">
+		<aside class="mainMenu" ng-class="{ menuOpen: showMenu }" ng-controller="MenuController">
 			<span class="sectionName">Principal</span>
 			<ul>
 				<li ng-repeat="item in items">
@@ -19,14 +26,36 @@
 					<span>{{ item.label }}</span>
 				</li>
 			</ul>
+			<span class="landingDropdown" ng-class="{ expanded: landingDropdownExpanded }">
+				<span class="btn-block" ng-click="landingDropdownExpanded = landingDropdownExpanded ? false : true;">
+					<span class="close">&times;</span>
+					<span>Are you a trader?</span>
+				</span>
+				<div class="landingDropdownContent">
+					<ul>
+						<li ng-repeat="option in landingDropdownOptions">
+							<i class="{{ option.icon }}"></i>
+							<span>{{ option.label }}</span>
+						</li>
+					</ul>
+					<hr />
+					<span class="btn-sm">Create account</span>
+				</div>
+			</span>
 		</aside>
-		<section class="mainContent" ng-view>
+		<section class="mainContent" ng-class="{ menuOpen: showMenu }" ng-view>
 		</section>
 
+		<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.min.js"></script>		
 		<script src="/bower_components/angular/angular.min.js"></script>
-		<script src="/bower_components/angular-route/angular-route.min.js"></script>
+		<script src="/bower_components/angular-route/angular-route.min.js"></script>		
+    	<script src="/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    	<script src="/bower_components/ng-scrollbars/dist/scrollbars.min.js"></script>
 
 		<script src="scripts/app.js"></script>
+
+		<script src="scripts/directives/darwin.js"></script>
 
 		<script src="scripts/controllers/home.js"></script>
 		<script src="scripts/controllers/menu.js"></script>

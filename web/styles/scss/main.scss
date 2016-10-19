@@ -1,6 +1,12 @@
+// Vendors
+@import "../../../bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+
 // Mixins
 @import "mixins/_include-media.scss";
 
 // App components
 @import "components/_variables.scss";
 @import "components/_base.scss";
+@import "components/_menu.scss";
+@import "components/_content.scss";
+@import "components/_darwins.scss";

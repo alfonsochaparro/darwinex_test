@@ -1,1 +1,46 @@
-<h1>wiii</h1>
+<article class="heading">
+	<div class="strategyInfo">
+		<div class="strategyIcon">		
+		</div>
+		<div class="strategyDetails">
+			<span class="strategyName">Estrategianombre</span>
+			<span class="strategyUser">
+				Nombre de usuario
+				<span class="badge">+2</span>
+			</span>
+		</div>
+	</div>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra odio in consequat feugiat. Pellentesque vitae sagittis nulla. Nullam eu nulla fermentum, placerat purus eu, eleifend sem. Nunc imperdiet vestibulum.
+	</p>
+</article>
+<hr />
+<div class="optionsBar">
+	<span class="option optionBtn" ng-class="{ selected: listMode === 'list' }"
+		ng-click="listMode = 'list';">
+		<i class="icon-list"></i>
+	</span>
+	<span class="option optionBtn" ng-class="{selected: listMode === 'card'}"
+		ng-click="listMode = 'card';">
+		<i class="icon-card"></i>
+	</span>
+	<div class="option">
+		<span>In Portfolio</span>
+		<span>&nbsp;</span>
+		<div class="switch" ng-class="{ checked: inPortfolio }" 
+			ng-click="inPortfolio = !inPortfolio"></div>
+	</div>	
+	<span class="separator"></span>
+	<span class="option right">
+		<span class="separator"></span>
+		<span>Order by Return</span>
+	</span>
+</div>
+<br />
+<span>{{ darwins.length }} darwins encontrados</span>
+<br /><br />
+<section class="darwinsCarousel" ng-scrollbars ng-scrollbars-config="scrollBarConfig">
+	<div class="darwinsContainer" style="width: {{ darwins.length * 265 }}px; ">
+		<darwin ng-repeat="darwin in darwins" data-value="darwin"></darwin>
+	</div>
+</section>

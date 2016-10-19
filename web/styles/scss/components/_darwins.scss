@@ -1,0 +1,115 @@
+.darwin {
+	display: inline-block;
+	width: 253px;
+	height: 372px;
+	background: rgba(255, 255, 255, 0.05);
+	margin-right: 12px;
+
+	font-size: 13px;
+
+	.name {
+		padding: 8px;
+		float: left;
+
+		.icon {
+			width: 16px;
+			height: 16px;
+			border-radius: 8px;
+			text-align: center;
+			line-height: 16px;
+			font-size: 9pt;
+			display: inline-block;
+
+			&.red { background: $colorRed; }
+			&.pink { background: $colorPink; }
+			&.orange { background: $colorOrange; }
+			&.green { background: $colorGreen; }
+			&.blue { background: $colorBlue; }
+		}
+
+		.num {
+			color: rgba(255, 255, 255, 0.25);
+			margin-left: 4px;
+		}
+	}
+
+	.actions {
+		padding: 8px;
+		float: right;
+		color: $colorGreen;
+	}
+
+	.chart {
+		width: 100%;
+		height: 106px;
+
+		&.red {
+			polyline { stroke: $colorRed; }
+		}
+		&.pink {
+			polyline { stroke: $colorPink; }
+		}
+		&.orange {
+			polyline { stroke: $colorOrange; }
+		}
+		&.green {
+			polyline { stroke: $colorGreen; }
+		}
+		&.blue {
+			polyline { stroke: $colorBlue; }
+		}
+
+		svg {
+			width: 100%;
+			margin: 22px auto;
+		}
+		
+	}
+
+	.options {
+		padding: 8px; 
+	}
+
+	.info {
+		margin: 0;
+		padding: 0;
+
+		li {
+			height: 48px;
+			line-height: 48px;
+			position: relative;
+			list-style: none;
+
+			&:before {
+				content: "";
+				width: 100%;
+				height: 1px;
+				background: rgba(255, 255, 255, 0.1);
+				position: absolute;
+			}
+
+			.label {
+				text-transform: uppercase;
+				color: rgba(255, 255, 255, 0.5);
+				padding: 0 8px;
+			}
+
+			.value {
+				float: right;
+				color: $colorWhite;
+				padding: 0 8px;
+
+				&.positive { color: $colorGreen; }
+				&.negative { color: $colorRed; }
+
+				i { color: rgba(255, 255, 255, 0.25); }
+			}
+		}
+	}
+}
+
+.darwinsCarousel {
+	max-width: 100%;
+	overflow: hidden;	
+    height: calc(100% - 255px);
+}

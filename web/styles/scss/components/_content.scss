@@ -1,0 +1,127 @@
+section.mainContent {
+	width: calc(100% - 188px);
+	height: calc(100% - 50px);
+	float: left;
+	transition: all 0.15s ease-out;
+	background: rgba(255, 255, 255, 0.05);
+	padding: 8px;
+	color: $colorWhite;
+	box-sizing: border-box;
+
+	@include media('<=768px') {
+		width: 100%;
+
+		&.menuOpen {
+			width: calc(100% - 188px);
+		}
+	}
+}
+
+.heading {
+	.strategyInfo {
+		display: table;
+
+		> * {
+			display: table-cell;
+			vertical-align: middle;
+		}
+
+		.strategyIcon {
+			width: 50px;
+			height: 50px;
+			border-radius: 25px;
+			background: #67D2C8;
+		}
+
+		.strategyDetails {
+			padding: 0px 12px;
+			> span {
+				display: block;
+			}
+
+			.strategyName {
+				color: #ADAFB2;
+				font-size: 12pt;
+			}
+
+			.strategyUser {
+				color: $colorWhite;
+				font-size: 13pt;
+
+				.badge {
+					width: 18px;
+					height: 18px;
+					display: inline-block;
+					line-height: 18px;
+					text-align: center;
+					color: $colorBlue;
+					background: $colorGreyDark;
+					font-size: 10pt;
+					border-radius: 2px;
+					cursor: pointer;
+					padding: 0;
+				}
+			}
+		}
+	}
+
+	p {
+		color: $colorWhite;
+		max-width: 35%;
+		max-height: 48px;
+		overflow: hidden;
+		position: relative;
+
+		&:after {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 50%;
+			left: 0;
+			bottom: 0;
+
+			background: linear-gradient(transparent, #0c0c0c);
+		}
+	}
+}
+
+.optionsBar {
+	display: block;
+	height: 50px;
+	background: rgba(255, 255, 255, 0.05);
+
+	.option {
+		display: inline-block;
+		vertical-align: middle;
+		height: 50px;
+		min-width: 50px;
+		position: relative;
+		text-align: center;
+		padding: 0 12px;
+		line-height: 50px;
+
+		&.optionBtn {
+			cursor: pointer;
+			color: $colorGreyDark;
+			text-align: center;
+			padding: 0;
+
+			&.selected {
+				color: $colorBlue;
+				background: $colorBlack;
+			}
+		}
+		
+		&.right {
+			float: right;
+		}
+	}
+
+	.separator {
+		width: 1px;
+		height: 100%;
+		background: rgba(255, 255, 255, 0.2);
+		display: inline-block;
+		vertical-align: top;
+	}
+}

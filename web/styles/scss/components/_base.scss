@@ -8,7 +8,15 @@ body {
 	margin: 0;
 	padding: 0;
 	background: $colorBlack;
+	font-size: 12pt;
 }
+
+hr { 
+	margin-bottom: 24px; 
+	border-color: rgba(255, 255, 255, 0.1);
+}
+
+.clear { clear: both; }
 
 .btn-success, .btn-block, .btn-sm, .btn-icon {
 	text-transform: uppercase;
@@ -80,71 +88,114 @@ body {
 
 nav.navBar {
 	background: $colorBlack;
-
 	padding: 10px;
+
+    @include media('<=768px') {
+    	text-align: center;
+    }
 
 	#logo {
 		width: 115px;
 		height: 25px;
 	}
+
+	.menuBtn {
+		display: none;
+	    vertical-align: top;
+	    width: 24px;
+	    height: 30px;
+	    position: relative;
+	    margin-right: 6px;
+	    cursor: pointer;
+    	float: left;
+
+	    @include media('<=768px') {
+	    	display: inline-block;
+	    }
+
+	    span {
+	    	transition: all 0.25s ease-out;
+	    	position: absolute;
+	    	width: 100%;
+	    	height: 4px;
+	    	border-radius: 2px;
+	    	background: $colorWhite;
+	    	left: 0;
+	    	top: 15px;
+
+	    	&:first-child {
+	    		top:8px;
+	    	}
+
+	    	&:last-child {
+	    		top: 22px;
+	    	}
+
+	    }
+
+	    &.menuOpen {
+    		span {
+		    	opacity: 0;
+
+		    	&:first-child {
+		    		opacity: 1;
+		    		top: 13px;
+		    		transform: rotate(45deg);
+		    		background: $colorBlue;
+		    	}
+
+		    	&:last-child {
+		    		opacity: 1;
+		    		top: 13px;
+		    		transform: rotate(-45deg);
+		    		background: $colorBlue;
+		    	}
+	    	}
+	    }
+
+	}
 }
 
-aside.mainMenu {
-	width: 188px;
-	height: calc(100% - 50px);
-	float: left;
-	transition: all 0.15s ease-out;
-	background: rgba(255, 255, 255, 0.1);
+.switch {
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	width: 40px;
+	height: 20px;
+	cursor: pointer;
 
-	color: rgba(255, 255, 255, 0.9); 
-
-	.sectionName {
-		height: 35px;
-		background: rgba(255, 255, 255, 0.05);
-		text-transform: uppercase;
-		display: block;
-		line-height: 35px;
-		padding-left: 20px;
+	&:before {
+		content: "";
+		position: absolute;
+		width: 40px;
+		height: 10px;
+		left: 0;
+		top: 5px;
+		background: $colorGreyDark;
+		border-radius: 5px;
+		transition: all 0.15s ease-out;
 	}
 
-	ul {
-		margin: 0;
-		padding: 0;
-		list-style: none;
+	&:after {
+		content: "";
+		position: absolute;
+		width: 20px;
+		height: 20px;
+		left: 0;
+		top: 0;
+		background: $colorGreyLight;
+		border-radius: 10px;
+		transition: all 0.15s ease-out;
+		box-shadow: inset 0px 0px 1px rgba(0, 0, 0, 0.15);
+	}
 
-		li {
-			height: 30px;
-			width: 100%;
-			display: table;
-			cursor: pointer;
-			padding-left: 20px;
-			box-sizing: border-box;
-
-			> * {
-				display: table-cell;
-				vertical-align: middle;
-			}
-
-			&:hover {
-				background: rgba(255, 255, 255, 0.025);
-			}
-
-			span {
-				width: 80%;
-				text-align: left;
-				font-size: 12px;
-			}
+	&.checked {
+		&:before {
+			background: $colorBlueDark;
+		}
+		&:after {
+			left: 20px;
+			background: $colorBlue;
 		}
 	}
-}
-
-section.mainContent {
-	width: calc(100% - 188px);
-	height: calc(100% - 50px);
-	float: left;
-	transition: all 0.15s ease-out;
-	background: rgba(255, 255, 255, 0.05);
-	padding: 8px;
-	color: $colorWhite;
-	box-sizing: border-box;
 }

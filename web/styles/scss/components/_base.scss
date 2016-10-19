@@ -1,0 +1,77 @@
+html, body {
+	height: 100%;
+	min-height: 100%;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	background: $colorBlack;
+}
+
+.btn-success, .btn-block, .btn-sm, .btn-icon {
+	text-transform: uppercase;
+	cursor: pointer;
+	display: inline-block;
+	box-sizing: border-box;
+
+	&.btn-success {
+		
+		color: $colorWhite;
+		border: 2px $colorGreen solid;
+		height: 22px;
+		line-height: 20px;
+		border-radius: 17px;
+		padding: 0px 12px;
+		background: transparent;
+
+		&:hover {
+			background: $colorGreen;
+			color: $colorBlack;
+		}
+	}
+
+	&.btn-block {
+		background: $colorBlue;
+		width: 187px;
+		height: 35px;
+		line-height: 35px;
+		padding: 0px 15px;
+		color: $colorWhite;
+
+		&:hover {
+			background: $colorBlueDark;
+		}
+	}
+
+	&.btn-sm {
+		width: 157px;
+		height: 22px;
+		text-align: center;
+		color: $colorBlack;
+		background: $colorWhite;
+		border-radius: 17px;
+
+		&:hover {
+			background: $colorGreyLight;
+		}
+	}
+
+	&.btn-icon {
+		width: 16px;
+		height: 16px;
+		text-align: center;
+		background: $colorWhite;
+		border-radius: 8px;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		
+		&:hover {
+			background: $colorBlue;
+		}
+
+		&.icon-card {
+			background: url(/web/res/images/card-icon.svg);
+		}
+	}
+}

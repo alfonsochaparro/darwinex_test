@@ -61,7 +61,7 @@
 	</span>
 </div>
 <br />
-<div class="carouselActions pull-right">
+<div class="carouselActions pull-right" ng-show="listMode === 'card'">
 	<span class="btn-icon dark" ng-click="moveCarousel('left')">
 		<span class="glyphicon glyphicon-chevron-left"></span>
 	</span>
@@ -74,7 +74,7 @@
 <br /><br />
 <section class="darwinsCarousel" ng-scrollbars ng-scrollbars-config="scrollBarConfig">
 	<div class="darwinsContainer" 
-		style="width: {{ darwins.length * 265 }}px; margin-left: -{{ carouselIndex * 265 }}px;">
-		<darwin ng-repeat="darwin in darwins" data-value="darwin"></darwin>
+		style="width: {{ listMode === 'card' ? (darwins.length * 265) + 'px' : '100%' }}; margin-left: -{{ carouselIndex * 265 }}px;">
+		<darwin ng-repeat="darwin in darwins" data-value="darwin" mode="listMode"></darwin>
 	</div>
 </section>

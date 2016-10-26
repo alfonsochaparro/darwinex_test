@@ -1,11 +1,33 @@
 .darwin {
-	display: inline-block;
-	width: 253px;
-	height: 372px;
 	background: rgba(255, 255, 255, 0.05);
-	margin-right: 12px;
-
 	font-size: 13px;
+
+	&.card {
+		display: inline-block;
+		width: 253px;
+		margin-right: 12px;	
+		height: 372px;	
+	}
+
+	&.list {
+		display: table;
+		width: 100%;
+		margin-bottom: 12px;	
+		height: 192px;	
+
+		& > * {
+			display: table-cell;
+			vertical-align: middle;
+
+			&.info { width: 40%; }			
+		}
+
+		.info {
+			li:first-child:before {
+				display: none;
+			}
+		}
+	}
 
 	.name {
 		padding: 8px;

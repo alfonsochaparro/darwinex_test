@@ -7,6 +7,7 @@ angular.module('darwin', [])
         replace: 'true',
         scope: {
             value: '=value',
+            mode: '=mode',
             onTradeClick: '&onTradeClick'
         },
         templateUrl: '/web/views/directives/darwin.html'

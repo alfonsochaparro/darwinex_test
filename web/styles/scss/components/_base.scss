@@ -88,6 +88,10 @@ hr {
 			background: transparent;
 			box-shadow: 0px 0px 1px rgba(255, 255, 255, 0.25);
 			color: rgba(255, 255, 255, 0.4);
+
+			&:hover {
+				background: rgba(255, 255, 255, 0.15);
+			}
 		}
 	}
 }
@@ -195,13 +199,27 @@ nav.navBar {
 		box-shadow: inset 0px 0px 1px rgba(0, 0, 0, 0.15);
 	}
 
+	&:hover {
+		&:before { background-color: $colorGreyDark * 1.5; }
+		&:after { background-color: $colorWhite; }
+	}
+
 	&.checked {
 		&:before {
-			background: $colorBlueDark;
+			background: $colorBlueDark / 2;
 		}
 		&:after {
 			left: 20px;
 			background: $colorBlue;
 		}
+
+		&:hover {
+			&:before { background-color: $colorBlueDark * 0.75; }
+			&:after { background-color: $colorBlue * 1.5; }		
+		}
 	}
+}
+
+.glyphicon {
+	top: 0px;
 }
